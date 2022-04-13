@@ -43,9 +43,6 @@ public class FirstFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         TextInputEditText nameEditText =
                 view.findViewById(R.id.textInputTextName);
-        TextInputEditText addressEditText =
-                view.findViewById(R.id.textInputTextAlamat);
-// Add Text Watcher on name input text
         nameEditText.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence charSequence, int
                     i, int i1, int i2) {
@@ -53,6 +50,42 @@ public class FirstFragment extends Fragment {
             @Override public void onTextChanged(CharSequence charSequence, int i,
                                                 int i1, int i2) {
                 pageViewModel.setName(charSequence.toString());
+            }
+            @Override public void afterTextChanged(Editable editable) {
+            }
+
+        });
+
+// Add Text Watcher on name input text
+
+        TextInputEditText alamatEditText =
+                view.findViewById(R.id.textInputTextAlamat);
+
+// Add Text Watcher on name input text
+        alamatEditText.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence charSequence, int
+                    i, int i1, int i2) {
+            }
+            @Override public void onTextChanged(CharSequence charSequence, int i,
+                                                int i1, int i2) {
+                pageViewModel.setAlamat(charSequence.toString());
+            }
+            @Override public void afterTextChanged(Editable editable) {
+            }
+
+        });
+
+        TextInputEditText numberEditText =
+                view.findViewById(R.id.textInputNomor);
+
+// Add Text Watcher on name input text
+        numberEditText.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence charSequence, int
+                    i, int i1, int i2) {
+            }
+            @Override public void onTextChanged(CharSequence charSequence, int i,
+                                                int i1, int i2) {
+                pageViewModel.setNumber(charSequence.toString());
             }
             @Override public void afterTextChanged(Editable editable) {
             }

@@ -12,5 +12,23 @@ public class PageViewModel extends ViewModel {
     public LiveData<String> getName() {
         return mName;
     }
+
+    private MutableLiveData<String> mAlamat = new MutableLiveData<>();
+    public void setAlamat(String alamat ) {
+        mAlamat.setValue(alamat);
+    }
+    public LiveData<String> getAlamat() {
+        return mAlamat;
+    }
+
+    private MutableLiveData<String> mNumber = new MutableLiveData<>();
+    public void setNumber(String number ) {
+        mNumber.setValue(number);
+    }
+    public LiveData<String> getNumber() {
+        return mNumber;
+    }
+
+
 }
 

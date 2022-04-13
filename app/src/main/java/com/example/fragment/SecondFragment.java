@@ -20,6 +20,8 @@ import androidx.lifecycle.ViewModelProviders;
 public class SecondFragment extends Fragment {
     private PageViewModel pageViewModel;
     private TextView txtName;
+    private TextView txtAlamat;
+    private TextView txtNumber;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -61,6 +63,22 @@ public class SecondFragment extends Fragment {
                     @Override
                     public void onChanged(@Nullable String s) {
                         txtName.setText(s);
+                    }
+                });
+        txtAlamat = view.findViewById(R.id.textViewAddress);
+        pageViewModel.getAlamat().observe(requireActivity(), new
+                Observer<String>() {
+                    @Override
+                    public void onChanged(@Nullable String s) {
+                        txtAlamat.setText(s);
+                    }
+                });
+        txtNumber = view.findViewById(R.id.textViewnumber);
+        pageViewModel.getNumber().observe(requireActivity(), new
+                Observer<String>() {
+                    @Override
+                    public void onChanged(@Nullable String s) {
+                        txtNumber.setText(s);
                     }
                 });
     }
